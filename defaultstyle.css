@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background:url("sfondo1.svg") ;
+    background-size: cover;
+    background-position: center;
+   
+
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    background:transparent;
+    backdrop-filter: blur(20px);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 2px solid #285f4e;
+}
+
+.logo{
+    
+    width: 100px;
+    height: 60px;
+    background: url("logo.png");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.navbar a{
+    position: relative;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-decoration:none;
+    margin-left: 30px;
+}
+
+.navbar a::before{
+    content: '';
+    position: absolute;
+    top:100%;
+    left:0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
+}
+
+.navbar a:hover:before{
+    width: 100%;
+}
