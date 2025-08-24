@@ -59,41 +59,53 @@ body{
     width: 100%;
 }
 
-/* ============================= */
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-    .header {
-        padding: 15px 30px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar a {
-        margin: 10px 0;
-        font-size: 16px;
-    }
+.meteo{
+    width: 60%;
+    top:150px;
+    left:20%;
+    position: relative;
+    border: 2px solid white;
+    backdrop-filter: blur(20px);
 }
 
-@media screen and (max-width: 480px) {
-    .logo {
-        width: 80px;
-        height: 50px;
-    }
 
-    .navbar a {
-        font-size: 14px;
-        margin: 8px 0;
-    }
+/*Responsive*/
+/* Media query per smartphone (max-width: 600px) */
+@media screen and (max-width: 600px) {
+  
+  .header {
+    padding: 15px 20px;        /* riduce padding laterale */
+    flex-direction: column;    /* logo sopra navbar */
+    align-items: flex-start;   /* allinea a sinistra */
+  }
 
-    .header {
-        padding: 10px 20px;
-        border-bottom: 1px solid #285f4e;
-    }
+  .logo {
+    width: 80px;               /* logo più piccolo */
+    height: 50px;
+    margin-bottom: 10px;       /* spazio tra logo e navbar */
+  }
+
+  .navbar {
+    width: 100%;               /* navbar occupa tutta la larghezza */
+    display: flex;
+    flex-direction: column;    /* link impilati */
+  }
+
+  .navbar a {
+    margin: 5px 0;             /* margine tra i link */
+    font-size: 16px;           /* testo leggermente più piccolo */
+  }
+
+  .meteo {
+    width: 90%;                /* occupa quasi tutta la larghezza */
+    left: 5%;                  /* centra il blocco */
+    top: 200px;                /* sposta più in basso per evitare header */
+  }
 }
+
+
+
+
+
+
+
