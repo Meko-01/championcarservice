@@ -18,7 +18,7 @@ body{
     width: 100%;
     padding: 20px 100px;
     background:transparent;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(3px);
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -58,17 +58,60 @@ body{
 .navbar a:hover:before{
     width: 100%;
 }
-
-.meteo{
-    width: 60%;
-    top:150px;
-    left:20%;
+.slider {
+  width: 60%;
+    height: 400px;
+    background: transparent;
     position: relative;
-    border: 2px solid white;
+    top: 200px;
+    left: 15%;
+    background-image: url("pattern2.jpg");
+    background-size: cover;
+    display: grid;
+    border: 2px solid #285f4e;
     backdrop-filter: blur(20px);
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colonne uguali */
+    gap: 20px;
+    padding: 10px;
 }
 
+.slider > div {
 
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    border: 1px solid black;
+    font-size: 20px;
+    text-align: center;
+    display: flex;               /* <-- attivo flex */
+    flex-direction: column;      /* contenuti in colonna */
+    justify-content: space-between; /* spinge testo in alto e bottone in basso */
+    padding: 20px;
+    border-radius: 5px;
+    
+}
+
+.slider > div > p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    text-shadow:5px 5px 5px black;
+}
+.slider > div > input {
+    background: white;
+    border: none;
+    height: 50px;
+    border-radius: 4px;
+    margin-top: auto; /* in caso di overflow tiene l'input in basso */
+}
+
+.slider > div > input:hover{
+    background-color: #5dc2f5;
+    transition: 0.4s;
+    color: whitesmoke;
+    border: 1px solid black;
+    font-weight: bolder;
+}
 /*Responsive*/
 /* Media query per smartphone (max-width: 600px) */
 @media screen and (max-width: 600px) {
@@ -96,16 +139,4 @@ body{
     font-size: 16px;           /* testo leggermente più piccolo */
   }
 
-  .meteo {
-    width: 90%;                /* occupa quasi tutta la larghezza */
-    left: 5%;                  /* centra il blocco */
-    top: 200px;                /* sposta più in basso per evitare header */
-  }
 }
-
-
-
-
-
-
-

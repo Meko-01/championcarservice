@@ -1,24 +1,39 @@
-<!--
-Spiegare cosa si fa
-Button 1: prenota tramite app
-Button 2: Contatti consulenza privata
--->
+<!--home - contatti - dicono di noi -->
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="auto2.css">
+        <link rel="stylesheet" href="defaultstyle.css">
     </head>
     <body>
-     <p>imbarcazioni</p>
-             <link rel="stylesheet" href="defaultstyle.css">
-
-    <header class="header"> 
+        <header class="header"> 
             <div class="logo"></div>       <!--Header è un tag semantico-->
             <nav class="navbar">
-                <a href="#">HOME</a>
-                <a href="#">CONTATTI</a>
+                <a href="index.html">HOME</a>
                 <a href="#">GALLERIA</a>  
                 <a href="#">AIUTO</a>
             </nav>  
         </header>
-     <body>
+        <!--<a href="auto.html">AUTO</a>
+        <a href="casa.html">CASA E STRUTTURE RICETTIVE</a>
+        <a href="imbarcazioni.html">IMBARCAZIONI</a>
+    -->
+        
+        <div class="containerauto1">
+            
+            <div class="autosede">
+                <p>AUTOLAVAGGIO IN SEDE</p>
+                <input type="button" value="Vai alla pagina" onclick="window.location.href='autosed.html'">
+
+            </div>
+            <div class="audodom">
+                <p>AUTOLAVAGGIO A DOMICILIO</p>
+                <input type="button" value="Vai alla pagina" onclick="window.location.href='autodom.html'">
+
+            </div>
+            
+        </div>
+    </body>
 
 </html>
+    

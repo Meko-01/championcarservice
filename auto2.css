@@ -1,0 +1,49 @@
+.containerauto1{
+    width: 60%;
+    height: 400px;
+    background: url("pattern2.jpg");
+    position: relative;
+    top: 200px;
+    left: 15%;
+    display: grid;
+    border: 2px solid #285f4e;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+}
+
+.containerauto1 > div {
+    backdrop-filter: blur(10px);
+    border: 1px solid black;
+    font-size: 20px;
+    text-align: center;
+    display: flex;               /* <-- attivo flex */
+    flex-direction: column;      /* contenuti in colonna */
+    justify-content: space-between; /* spinge testo in alto e bottone in basso */
+    padding: 25px;
+    border-radius: 5px;
+}
+.containerauto1 > div > p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    text-shadow:5px 5px 5px black;
+}
+.containerauto1 > div > input {
+    background: rgb(219, 205, 205);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: auto; /* in caso di overflow tiene l'input in basso */
+    
+}
+
+.containerauto1 > div > input:hover{
+    background-color: #5dc2f5;
+    transition: 0.4s;
+    color: whitesmoke;
+    border: 1px solid black;
+    font-weight: bolder;
+}
