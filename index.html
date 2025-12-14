@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CHAMPIONCARSERVICE</title>
+  <title>CHAMPION MULTI SERVICE</title>
   <style>
     :root {
       --primary: #005c7a;
@@ -14,114 +14,195 @@
     }
 
     * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
 
-    body { 
-      font-family: Arial, sans-serif; 
-      background: url('sfondofinale.jpg') center/cover no-repeat fixed; 
-      color: var(--text-dark); 
+    body {
+      font-family: Arial, sans-serif;
+      background: url('sfondofinale.jpg') center/cover no-repeat fixed;
+      color: var(--text-dark);
     }
 
     a { text-decoration: none; color: inherit; }
 
-    header { 
+    /* Header */
+    header {
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .nav-container { 
-      max-width: 1100px; 
-      margin: auto; 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 16px; 
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      gap: 16px;
     }
 
-    .logo img {
-      height: 50px; /* regolare */
-      width: auto;
-      display: block;
-    }
+    .logo img { height: 50px; width: auto; display: block; }
 
-    nav ul { list-style: none; display: flex; gap: 24px; }
-
+    nav ul { list-style: none; display: flex; gap: 24px; flex-wrap: wrap; }
     nav a { color: var(--text-dark); font-weight: 500; }
+    nav a:hover { color: var(--primary); transition: color 0.2s ease; }
 
-    .btn-primary { background: var(--primary); color: white; padding: 10px 18px; border-radius: var(--radius); }
-
-    .hero { 
-      background: url('hero-auto.jpg') center/cover no-repeat; 
-      height: 60vh; 
-      display: flex; 
-      align-items: center; 
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      display: inline-block;
     }
 
-    .hero .inner { 
-      max-width: 800px; 
-      margin: auto; 
-      text-align: center; 
-      color: white; 
+    /* Hero */
+    .hero {
+      background: url('hero-auto.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero .inner {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: white;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+      padding: 0 16px;
     }
 
-    .hero h1 { font-size: 2.8em; margin-bottom: 16px; }
-    .hero p { font-size: 1.2em; margin-bottom: 24px; }
-    .hero .btn { font-size: 1em; }
+    .hero h1 { font-size: 2.6em; margin-bottom: 16px; text-transform: uppercase; }
+    .hero p { font-size: 1.1em; margin-bottom: 24px; }
 
-    section { 
-      padding: 60px 16px; 
-      background: rgba(255,255,255,0.8); 
+    /* Sections */
+    section {
+      padding: 60px 16px;
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(4px);
-      border-radius: var(--radius); 
-      margin: 24px auto; 
+      border-radius: var(--radius);
+      margin: 24px auto;
       max-width: 1100px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
-    .section-title { text-align: center; margin-bottom: 40px; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+    .section-title { text-align: center; margin-bottom: 40px; }
 
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 24px; }
-
-    .service-card { 
-      background: rgba(255,255,255,0.7); 
-      border-radius: var(--radius); 
-      padding: 24px; 
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2); 
+    /* SERVIZI: 2 card grandi */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 24px;
     }
 
-    .service-card h3 { margin-bottom: 12px; color: var(--primary); }
-    .service-card p { color: var(--text-muted); }
-
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 16px; }
-
-    .proj { position: relative; overflow: hidden; border-radius: var(--radius); }
-
-    .proj img { width: 100%; display: block; transition: transform 0.3s; border-radius: var(--radius); }
-    .proj:hover img { transform: scale(1.05); }
-
-    .testimonial { 
-      max-width: 700px; 
-      margin: auto; 
-      font-style: italic; 
-      color: var(--text-muted); 
+    .service-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       text-align: center;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
 
-    .contact-form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 16px; }
-    .contact-form input, .contact-form textarea { padding: 12px; border: 1px solid #ccc; border-radius: var(--radius); }
-    .contact-form button { background: var(--primary); color: white; padding: 14px; border: none; border-radius: var(--radius); cursor: pointer; }
+    .service-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.4em;
+      color: var(--primary);
+    }
 
-    footer { background: rgba(255,255,255,0.8); backdrop-filter: blur(4px); text-align: center; padding: 24px; color: var(--text-muted); border-radius: var(--radius); margin: 24px auto; max-width: 1100px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .service-card p {
+      font-size: 1em;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Galleria */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .proj {
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .proj img { width: 100%; border-radius: var(--radius); display: block; }
+
+    /* Testimonianze */
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto 16px;
+      font-style: italic;
+      color: var(--text-dark);
+      text-align: center;
+      background: rgba(255,255,255,0.95);
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Contatti 2x2 */
+    .contact-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .left-column, .right-column {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .contact-box h3 { margin-bottom: 8px; color: var(--primary); }
+    .contact-box p, .contact-box a { color: var(--text-dark); font-size: 0.95em; }
+
+    .contact-box iframe {
+      width: 100%;
+      height: 160px; /* mappa proporzionata */
+      border: 0;
+      border-radius: var(--radius);
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      border-radius: var(--radius);
+      margin: 24px auto;
+      max-width: 1100px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero { height: 54vh; }
+      .hero h1 { font-size: 2.3em; }
+    }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2em; }
-      .logo img { height: 40px; } /* mobile */
+      .logo img { height: 40px; }
+      .hero { height: 48vh; }
+      .hero h1 { font-size: 2em; }
+      .contact-table { grid-template-columns: 1fr; } /* stack in mobile */
+      .services { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -129,51 +210,43 @@
 
   <header>
     <div class="nav-container">
-      <div class="logo">
-        <img src="logo.png" alt="Logo Champion Car Service">
-      </div>
+      <div class="logo"><img src="logo.png" alt="Champion Multi Service"></div>
       <nav>
         <ul>
           <li><a href="#servizi">Servizi</a></li>
           <li><a href="#progetti">Galleria</a></li>
-          <li><a href="#testimonianze">Testimonianze</a></li>
+          <li><a href="#testimonianze">Recensioni</a></li>
           <li><a href="#contatti">Contatti</a></li>
         </ul>
       </nav>
-      <a href="#contatti" class="btn-primary">Prenota</a>
+      <a href="https://championcarservice.prenotime.it/prenota" class="btn-primary" target="_blank" rel="noopener">Prenota</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="inner">
-      <h1>CHAMPION CAR SERVICE</h1>
+      <h1>CHAMPION MULTI SERVICE</h1>
       <p>Esterno, interno, cerchi, lucidatura e trattamenti ceramici — tutto in un unico posto.</p>
-      <a href="#contatti" class="btn-primary">Prenota ora</a>
+      <a href="https://championcarservice.prenotime.it/prenota" class="btn-primary" target="_blank" rel="noopener">Prenota ora</a>
     </div>
   </section>
 
+  <!-- SERVIZI: 2 card grandi -->
   <section id="servizi">
     <div class="section-title"><h2>I nostri servizi</h2></div>
     <div class="services">
       <div class="service-card">
-        <h3>Lavaggio esterno</h3>
-        <p>Pulizia completa della carrozzeria, rimozione sporco, polvere, insetti.</p>
+        <h3>Veicoli e Imbarcazioni</h3>
+        <p>Trattamenti professionali per auto, moto, camper, furgoni e imbarcazioni: lavaggio esterno e interno, lucidatura, protezione ceramica, cura dei cerchi e degli interni.</p>
       </div>
       <div class="service-card">
-        <h3>Lavaggio interno</h3>
-        <p>Aspirazione, lavaggio tessuti, igienizzazione abitacolo.</p>
-      </div>
-      <div class="service-card">
-        <h3>Lavaggio cerchi e pneumatici</h3>
-        <p>Detersione profonda e protezione per cerchi e battistrada.</p>
-      </div>
-      <div class="service-card">
-        <h3>Lucidatura & Protezione</h3>
-        <p>Trattamenti lucidi, cera, rivestimento ceramico, protezione lungo termine.</p>
+        <h3>Pulizie e Manutenzione</h3>
+        <p>Servizi dedicati alla pulizia profonda e alla manutenzione: igienizzazione ambienti, trattamenti specifici per materiali, cura di dettagli e rifiniture, interventi su richiesta.</p>
       </div>
     </div>
   </section>
 
+  <!-- GALLERIA -->
   <section id="progetti">
     <div class="section-title"><h2>Galleria</h2></div>
     <div class="projects">
@@ -184,46 +257,54 @@
     </div>
   </section>
 
+  <!-- TESTIMONIANZE -->
   <section id="testimonianze">
-    <div class="section-title"><h2>Cosa dicono i nostri clienti</h2></div>
+    <div class="section-title"><h2>Recensioni Google</h2></div>
     <div class="testimonial">
       ⭐⭐⭐⭐⭐<br>
-      “Nuovo?Lavato con Perlana? No, portata da Domenico!
-Ero già stato l'anno scorso presso Domenico per un lavaggio e il risultato mi era piaciuto. Quest'anno, durante il mio soggiorno salentino, l'ho riportata per lavaggio approfondito dentro (mi avevano impastato il cruscotto di lucido) e fuori, istallazione led, sistemazione soft-touch sul volante e rigenerazione fari. Che dire le foto parlano da sole. Competente, preciso e onesto, prima di ripartire altro giro con applicazione protettivo per l'inverno!Stra-consigliato” — Andrea
-    </div><br><br>
-<div class="testimonial">
-  ⭐⭐⭐⭐⭐<br>
-    Ormai appuntamento fisso almeno una volta al mese da loro, fenomenali per puntualità servizio e chiaramente unici a domicilio. —Steven
- </div>
+      “Nuovo? Lavato con Perlana? No, portata da Domenico! Stra-consigliato” — Andrea
+    </div>
+    <div class="testimonial">
+      ⭐⭐⭐⭐⭐<br>
+      Ormai appuntamento fisso almeno una volta al mese da loro, fenomenali per puntualità e servizio. — Steven
+    </div>
   </section>
 
+  <!-- CONTATTI: tabella 2x2 -->
   <section id="contatti">
-    <div class="section-title"><h2>Contattaci</h2></div>
-    <form class="contact-form" action="#" method="post">
-      <input type="text" name="nome" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="tel" name="telefono" placeholder="Telefono" required>
-      <textarea name="messaggio" rows="4" placeholder="Messaggio (servizio richiesto, data, orario)"></textarea>
-      
-    </form>
+    <div class="section-title"><h2>Contatti</h2></div>
+    <div class="contact-table">
+      <!-- Colonna sinistra: Indirizzo (alto) + Mappa (basso) -->
+      <div class="left-column">
+        <div class="contact-box">
+          <h3>📍 Indirizzo</h3>
+          <p>Corso Italia, 23<br>73040 Morciano di Leuca (LE)</p>
+        </div>
+        <div class="contact-box">
+          <h3>🗺️ Mappa</h3>
+          <iframe src="https://www.google.com/maps?q=Corso+Italia,+23,+73040+Morciano+di+Leuca+LE&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Colonna destra: Telefono (alto) + WhatsApp (basso) -->
+      <div class="right-column">
+        <div class="contact-box">
+          <h3>📞 Telefono</h3>
+          <p><a href="tel:+393930665185">+39 393 066 5185</a></p>
+        </div>
+        <div class="contact-box">
+          <h3>💬 WhatsApp</h3>
+          <p><a href="https://wa.me/393930665185" target="_blank" rel="noopener">Chatta su WhatsApp</a></p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Champion Car Service — Tutti i diritti riservati
+    &copy; 2025 Champion Multi Service — Tutti i diritti riservati
   </footer>
-
-  <script>
-    // Scroll smooth per link interni
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>
