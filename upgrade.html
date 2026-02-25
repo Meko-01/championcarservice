@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHAMPION MULTI SERVICE</title>
+  <style>
+    :root {
+      --primary: #005c7a;
+      --primary-light: #338fae;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('sfondofinale.jpg') center/cover no-repeat fixed;
+      color: var(--text-dark);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      gap: 16px;
+      position: relative;
+    }
+
+    .logo img { height: 50px; }
+
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav a { font-weight: 500; }
+    nav a:hover { color: var(--primary); }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: url('hero-auto.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero .inner {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+      padding: 0 16px;
+    }
+
+    .hero h1 { font-size: 2.6em; margin-bottom: 16px; }
+    .hero p { font-size: 1.1em; }
+
+    section {
+      padding: 60px 16px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(4px);
+      border-radius: var(--radius);
+      margin: 24px auto;
+      max-width: 1100px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .section-title { text-align: center; margin-bottom: 40px; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .service-card h3 { color: var(--primary); margin-bottom: 16px; }
+
+    /* ===== GALLERIA → PULSANTI ===== */
+    .gallery-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .gallery-btn {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      border-radius: var(--radius);
+      padding: 48px 24px;
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: var(--primary);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gallery-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto 16px;
+      font-style: italic;
+      text-align: center;
+      background: rgba(255,255,255,0.95);
+      padding: 16px;
+      border-radius: var(--radius);
+    }
+
+    .contact-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    footer {
+      background: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 24px;
+      margin: 24px auto;
+      max-width: 1100px;
+      border-radius: var(--radius);
+    }
+
+    @media (max-width: 768px) {
+      .services { grid-template-columns: 1fr; }
+      .contact-table { grid-template-columns: 1fr; }
+      .menu-toggle { display: block; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo"><img src="logo.png" alt="Champion Multi Service"></div>
+    <button class="menu-toggle">☰</button>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#progetti">Galleria</a></li>
+        <li><a href="#testimonianze">Recensioni</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <h1>CHAMPION MULTI SERVICE</h1>
+    <p>La cura completa ha un solo nome.</p>
+  </div>
+</section>
+
+<section id="servizi">
+  <div class="section-title"><h2>I nostri servizi</h2></div>
+  <div class="services">
+    <div class="service-card">
+      <h3>Veicoli e Imbarcazioni</h3>
+      <p>Trattamenti professionali per auto, moto, camper e imbarcazioni.</p>
+    </div>
+    <div class="service-card">
+      <h3>Pulizie e Manutenzione</h3>
+      <p>Igienizzazione ambienti e manutenzione dettagliata.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEZIONE GALLERIA AGGIORNATA -->
+<section id="progetti">
+  <div class="section-title"><h2>Galleria</h2></div>
+
+  <div class="gallery-links">
+    <a href="veicolieimbarcazioni.html" class="gallery-btn">
+      Veicoli e Imbarcazioni
+    </a>
+
+    <a href="puliziemanutenzione.html" class="gallery-btn">
+      Pulizie e Manutenzione
+    </a>
+  </div>
+</section>
+
+<section id="testimonianze">
+  <div class="section-title"><h2>Recensioni Google</h2></div>
+  <div class="testimonial">
+      ⭐⭐⭐⭐⭐<br>
+      “Nuovo? Lavato con Perlana? No, portata da Domenico! Stra-consigliato” — Andrea
+    </div>
+    <div class="testimonial">
+      ⭐⭐⭐⭐⭐<br>
+      Ormai appuntamento fisso almeno una volta al mese da loro, fenomenali per puntualità e servizio. — Steven
+    </div>
+</section>
+
+<section id="contatti">
+  <div class="section-title"><h2>Contatti</h2></div>
+  <div class="contact-table">
+    <div class="contact-box">
+      <h3>📍 Indirizzo</h3>
+      <p>Corso Italia, 23 – Morciano di Leuca</p>
+    </div>
+    <div class="contact-box">
+      <h3>📞 Telefono</h3>
+      <p><a href="tel:+393930665185">+39 393 066 5185</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Champion Multi Service
+</footer>
+
+</body>
+</html>
