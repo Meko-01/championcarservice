@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CHAMPION MULTI SERVICE</title>
+
   <style>
     :root {
       --primary: #005c7a;
@@ -41,23 +42,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px;
-      gap: 16px;
-      position: relative;
     }
 
     .logo img { height: 50px; }
 
     nav ul { list-style: none; display: flex; gap: 24px; }
-    nav a { font-weight: 500; }
     nav a:hover { color: var(--primary); }
-
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
 
     .hero {
       background: url('hero-auto.jpg') center/cover no-repeat;
@@ -72,11 +62,7 @@
       text-align: center;
       color: white;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-      padding: 0 16px;
     }
-
-    .hero h1 { font-size: 2.6em; margin-bottom: 16px; }
-    .hero p { font-size: 1.1em; }
 
     section {
       padding: 60px 16px;
@@ -106,7 +92,6 @@
 
     .service-card h3 { color: var(--primary); margin-bottom: 16px; }
 
-    /* ===== GALLERIA → PULSANTI ===== */
     .gallery-links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -115,7 +100,6 @@
 
     .gallery-btn {
       background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
       border-radius: var(--radius);
       padding: 48px 24px;
       text-align: center;
@@ -123,12 +107,11 @@
       font-weight: 600;
       color: var(--primary);
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .gallery-btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
     }
 
     .testimonial {
@@ -163,10 +146,31 @@
       border-radius: var(--radius);
     }
 
+    /* WhatsApp fisso */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background: white;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+    }
+
     @media (max-width: 768px) {
       .services { grid-template-columns: 1fr; }
       .contact-table { grid-template-columns: 1fr; }
-      .menu-toggle { display: block; }
     }
   </style>
 </head>
@@ -175,9 +179,8 @@
 
 <header>
   <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Champion Multi Service"></div>
-    <button class="menu-toggle">☰</button>
-    <nav class="nav-menu">
+    <div class="logo"><img src="logo.png"></div>
+    <nav>
       <ul>
         <li><a href="#servizi">Servizi</a></li>
         <li><a href="#progetti">Galleria</a></li>
@@ -194,7 +197,7 @@
     <p>La cura completa ha un solo nome.</p>
   </div>
 </section>
-<!--
+
 <section id="servizi">
   <div class="section-title"><h2>I nostri servizi</h2></div>
   <div class="services">
@@ -207,33 +210,20 @@
       <p>Igienizzazione ambienti e manutenzione dettagliata.</p>
     </div>
   </div>
-</section>-->
+</section>
 
-<!-- SEZIONE GALLERIA AGGIORNATA -->
-<section id="servizi">
-  <div class="section-title"><h2>Servizi</h2></div>
-
+<section id="progetti">
+  <div class="section-title"><h2>Galleria</h2></div>
   <div class="gallery-links">
-    <a href="veicolieimbarcazioni.html" class="gallery-btn">
-      Veicoli e Imbarcazioni
-    </a>
-
-    <a href="puliziemanutenzione.html" class="gallery-btn">
-      Pulizie e Manutenzione
-    </a>
+    <a href="veicolieimbarcazioni.html" class="gallery-btn">Veicoli e Imbarcazioni</a>
+    <a href="puliziemanutenzione.html" class="gallery-btn">Pulizie e Manutenzione</a>
   </div>
 </section>
 
 <section id="testimonianze">
   <div class="section-title"><h2>Recensioni Google</h2></div>
-  <div class="testimonial">
-      ⭐⭐⭐⭐⭐<br>
-      “Nuovo? Lavato con Perlana? No, portata da Domenico! Stra-consigliato” — Andrea
-    </div>
-    <div class="testimonial">
-      ⭐⭐⭐⭐⭐<br>
-      Ormai appuntamento fisso almeno una volta al mese da loro, fenomenali per puntualità e servizio. — Steven
-    </div>
+  <div class="testimonial">⭐⭐⭐⭐⭐<br>“Stra-consigliato” — Andrea</div>
+  <div class="testimonial">⭐⭐⭐⭐⭐<br>Puntuali e professionali — Steven</div>
 </section>
 
 <section id="contatti">
@@ -253,6 +243,11 @@
 <footer>
   &copy; 2025 Champion Multi Service
 </footer>
+
+<!-- WhatsApp fisso -->
+<a href="https://wa.me/393930665185" class="whatsapp-float" target="_blank">
+  <img src="wts.png" alt="WhatsApp">
+</a>
 
 </body>
 </html>
