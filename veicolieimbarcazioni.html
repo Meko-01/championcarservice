@@ -60,25 +60,29 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
   transition:transform .6s ease;
 }
 .slide{
-  flex:0 0 300px;
-  text-align:center;
-  opacity:.5;
-  transform:scale(.85);
+  flex:0 0 220px; 
+  opacity:.4;
+  transform:scale(.75);
   transition:all .6s ease;
-  cursor:pointer;
-  position:relative;
 }
+
 .slide.active{
-  flex:0 0 380px;
+  flex:0 0 520px; 
   opacity:1;
   transform:scale(1);
+  z-index:2;
 }
 .slide img{
   width:100%;
-  height:260px;
+  height:200px; /* più basse le laterali */
   object-fit:cover;
   border-radius:var(--radius);
   box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transition:all .6s ease;
+}
+
+.slide.active img{
+  height:360px; /* MOLTO più alta la centrale */
 }
 .slide-desc{
   margin-top:8px;
@@ -176,6 +180,9 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 </style>
 </head>
 <body>
+  <a href="https://wa.me/393930665185" class="whatsapp-float" target="_blank">
+  <img src="wts.png" alt="WhatsApp">
+</a>
 <header class="page-header">
   <div></div>
   <div class="site-title">CHAMPION MULTI SERVICE</div>
@@ -189,7 +196,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 1 -->
 <div class="slide active">
-<img src="./puliziemanutenzione/1.jpg">
+<img src="./veicolieimbarcazioni/1.jpg">
 <div class="slide-desc">
 <h3>Gestione Lavaggio Flotte</h3>
 <p class="preview">Gestione programmata e impeccabile...</p>
@@ -199,7 +206,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 2 -->
 <div class="slide">
-<img src="./puliziemanutenzione/2.jpg">
+<img src="./veicolieimbarcazioni/2.jpg">
 <div class="slide-desc">
 <h3>Lavaggio e Decontaminazione</h3>
 <p class="preview">Rimuove contaminazioni...</p>
@@ -209,7 +216,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 3 -->
 <div class="slide">
-<img src="./puliziemanutenzione/3.jfif">
+<img src="./veicolieimbarcazioni/3.jfif">
 <div class="slide-desc">
 <h3>Oscuramento Vetri</h3>
 <p class="preview">Comfort e privacy...</p>
@@ -219,7 +226,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 4 -->
 <div class="slide">
-<img src="./puliziemanutenzione/4.jpg">
+<img src="./veicolieimbarcazioni/4.jpg">
 <div class="slide-desc">
 <h3>Protettivi Nanoceramici</h3>
 <p class="preview">Protezione avanzata...</p>
@@ -229,7 +236,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 5 -->
 <div class="slide">
-<img src="./puliziemanutenzione/5.jpg">
+<img src="./veicolieimbarcazioni/5.jpg">
 <div class="slide-desc">
 <h3>Lucidatura Carrozzeria</h3>
 <p class="preview">Correzione professionale...</p>
@@ -239,7 +246,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 6 -->
 <div class="slide">
-<img src="./puliziemanutenzione/6.jpg">
+<img src="./veicolieimbarcazioni/6.jpg">
 <div class="slide-desc">
 <h3>Rigenerazione Fari</h3>
 <p class="preview">Migliora visibilità...</p>
@@ -249,7 +256,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 7 -->
 <div class="slide">
-<img src="./puliziemanutenzione/7.jpg">
+<img src="./veicolieimbarcazioni/7.jpg">
 <div class="slide-desc">
 <h3>Tappezzeria a Vapore</h3>
 <p class="preview">Igienizzazione profonda...</p>
@@ -259,7 +266,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 8 -->
 <div class="slide">
-<img src="./puliziemanutenzione/8.jpg">
+<img src="./veicolieimbarcazioni/8.jpg">
 <div class="slide-desc">
 <h3>Trattamento Pelle</h3>
 <p class="preview">Nutrimento...</p>
@@ -269,7 +276,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 9 -->
 <div class="slide">
-<img src="./puliziemanutenzione/9.jpg">
+<img src="./veicolieimbarcazioni/9.jpg">
 <div class="slide-desc">
 <h3>Sanificazione Abitacolo</h3>
 <p class="preview">Ambiente sano...</p>
@@ -279,7 +286,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 10 -->
 <div class="slide">
-<img src="./puliziemanutenzione/10.jpg">
+<img src="./veicolieimbarcazioni/10.jpg">
 <div class="slide-desc">
 <h3>Lucidatura Carena</h3>
 <p class="preview">Ripristino gelcoat...</p>
@@ -289,7 +296,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 11 -->
 <div class="slide">
-<img src="./puliziemanutenzione/11.jpg">
+<img src="./veicolieimbarcazioni/11.jpg">
 <div class="slide-desc">
 <h3>Acciaio Nautico</h3>
 <p class="preview">Protezione acciaio...</p>
@@ -299,7 +306,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 12 -->
 <div class="slide">
-<img src="./puliziemanutenzione/12.jpg">
+<img src="./veicolieimbarcazioni/12.jpg">
 <div class="slide-desc">
 <h3>Trattamento Teak</h3>
 <p class="preview">Pulizia e nutrimento...</p>
@@ -309,7 +316,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 13 -->
 <div class="slide">
-<img src="./puliziemanutenzione/13.png">
+<img src="./veicolieimbarcazioni/13.png">
 <div class="slide-desc">
 <h3>Lavaggio Fine Stagione</h3>
 <p class="preview">Protezione invernale...</p>
@@ -319,7 +326,7 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 
 <!-- Slide 14 -->
 <div class="slide">
-<img src="./puliziemanutenzione/14.jpg">
+<img src="./veicolieimbarcazioni/14.jpg">
 <div class="slide-desc">
 <h3>Grafiche Personalizzate</h3>
 <p class="preview">Stile unico...</p>
@@ -332,11 +339,10 @@ h1{text-align:center;color:var(--primary);margin-bottom:24px}
 <button class="nav prev">‹</button>
 <button class="nav next">›</button>
 </div>
+
 </div>
 
-<a href="https://wa.me/393930665185" class="whatsapp-float" target="_blank">
-  <img src="wts.png" alt="WhatsApp">
-</a>
+
 
 <script>
 const slides = document.querySelectorAll('.slide');
